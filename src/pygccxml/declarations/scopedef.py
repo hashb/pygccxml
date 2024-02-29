@@ -89,6 +89,8 @@ class matcher(object):
         elif not answer:
             raise runtime_errors.declaration_not_found_t(decl_matcher)
         else:
+            if answer[0].name == "std":
+                return answer[0]
             raise runtime_errors.multiple_declarations_found_t(decl_matcher)
 
 
